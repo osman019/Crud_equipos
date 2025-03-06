@@ -1,42 +1,42 @@
-package com.equipos;
-import java.io.Serializable;
+package com.equiposfutbol;
 
-public class Equipos implements Serializable {
-    private static final long serialVersionUID = 1L;
+import java.util.ArrayList;
+
+public class Equipo {
     private String nombre;
-    private String ciudad_que_representa;
-    private String fecha_de_fundacion;
-    private String Presidente;
-    private String ArrayList<jugador> Jugadores;
+    private String ciudad;
+    private String fechaFundacion;
+    private String presidente;
+    private ArrayList<Jugador> jugadores;
 
-    public Equipos(String nombre, String ciudad_que_representa, String fecha_de_fundacion, String Presidente) {
+    public Equipo(String nombre, String ciudad, String fechaFundacion, String presidente) {
         this.nombre = nombre;
-        this.ciudad_que_representa = ciudad_que_representa;
-        this.fecha_de_fundacion = fecha_de_fundacion;
-        this.Presidente = Presidente;
-   
+        this.ciudad = ciudad;
+        this.fechaFundacion = fechaFundacion;
+        this.presidente = presidente;
+        this.jugadores = new ArrayList<>();
     }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getnombre() {return nombre;}
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
 
-    public void setnombre(String nombre) {this.nombre = nombre;}
+    public void agregarJugador(Jugador jugador) {
+        jugadores.add(jugador);
+    }
 
-    public String getciudad_que_representa() {return ciudad_que_representa;}
-
-    public void setciudad_que_representa(String ciudad_que_representa){this.ciudad_que_representa = ciudad_que_representa;}
-
-    public String getfecha_de_fundacion(){return fecha_de_fundacion;}
-   
-    public void setfecha_de_fundacion(String fecha_de_fundacion){this.fecha_de_fundacion = fecha_de_fundacion;}
-    
-    public String getPresidente(){return Presidente;}
-   
-    public void setPresidente(String Presidente){this.Presidente = Presidente;}
-
-
-
+    @Override
+    public String toString() {
+        return "Equipo{" +
+                "Nombre='" + nombre + '\'' +
+                ", Ciudad='" + ciudad + '\'' +
+                ", Fundación='" + fechaFundacion + '\'' +
+                ", Presidente='" + presidente + '\'' +
+                ", Jugadores=" + jugadores +
+                '}';
+    }
 }
