@@ -1,12 +1,12 @@
-package com.equiposfutbol;
+package com.equipos;
 
-public class Jugador {
+public class Jugadores {
     private int numeroDorsal;
     private String nombre;
     private String ciudad;
     private int edad;
 
-    public Jugador(int numeroDorsal, String nombre, String ciudad, int edad) {
+    public Jugadores(int numeroDorsal, String nombre, String ciudad, int edad) {
         this.numeroDorsal = numeroDorsal;
         this.nombre = nombre;
         this.ciudad = ciudad;

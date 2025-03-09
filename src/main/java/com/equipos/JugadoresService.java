@@ -1,17 +1,17 @@
-package com.equiposfutbol;
+package com.equipos;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class JugadorService {
-    private ArrayList<Jugador> jugadores = new ArrayList<>();
+public class JugadoresService {
+    private ArrayList<Jugadores> jugadores = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
     // CREATE
     public void agregarJugador() {
         System.out.print("Número de dorsal: ");
         int dorsal = scanner.nextInt();
-        scanner.nextLine();  // Limpiar buffer
+        scanner.nextLine();
 
         System.out.print("Nombre: ");
         String nombre = scanner.nextLine();
@@ -22,7 +22,7 @@ public class JugadorService {
         System.out.print("Edad: ");
         int edad = scanner.nextInt();
 
-        jugadores.add(new Jugador(dorsal, nombre, ciudad, edad));
+        jugadores.add(new Jugadores(dorsal, nombre, ciudad, edad));
         System.out.println("Jugador agregado exitosamente.");
     }
 
@@ -31,7 +31,7 @@ public class JugadorService {
         if (jugadores.isEmpty()) {
             System.out.println("No hay jugadores registrados.");
         } else {
-            for (Jugador j : jugadores) {
+            for (Jugadores j : jugadores) {
                 System.out.println(j);
             }
         }
@@ -43,7 +43,7 @@ public class JugadorService {
         int dorsal = scanner.nextInt();
         scanner.nextLine();
 
-        Jugador jugador = buscarJugador(dorsal);
+        Jugadores jugador = buscarJugador(dorsal);
         if (jugador != null) {
             System.out.print("Nuevo nombre: ");
             jugador.setNombre(scanner.nextLine());
@@ -65,7 +65,7 @@ public class JugadorService {
         System.out.print("Número de dorsal del jugador a eliminar: ");
         int dorsal = scanner.nextInt();
 
-        Jugador jugador = buscarJugador(dorsal);
+        Jugadores jugador = buscarJugador(dorsal);
         if (jugador != null) {
             jugadores.remove(jugador);
             System.out.println("Jugador eliminado exitosamente.");
@@ -75,8 +75,8 @@ public class JugadorService {
     }
 
     // Buscar jugador por dorsal
-    private Jugador buscarJugador(int dorsal) {
-        for (Jugador j : jugadores) {
+    private Jugadores buscarJugador(int dorsal) {
+        for (Jugadores j : jugadores) {
             if (j.getNumeroDorsal() == dorsal) {
                 return j;
             }
